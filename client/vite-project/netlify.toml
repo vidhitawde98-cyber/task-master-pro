@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Client-side routing: any unknown path serves index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

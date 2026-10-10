@@ -1,0 +1,17 @@
+# Optional: lets Render create this service automatically from "Blueprints".
+# Not required — you can also just create a Web Service by hand (see the README).
+services:
+  - type: web
+    name: student-task-manager-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        sync: false
